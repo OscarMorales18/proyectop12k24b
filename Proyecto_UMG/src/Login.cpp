@@ -4,7 +4,6 @@
 #include <conio.h>
 #include "login.h"
 #include "usuarios.h"
-
 #define MAX 80
 
 int Login::menuIniciarSesion() {
