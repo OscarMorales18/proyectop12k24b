@@ -99,6 +99,7 @@ int opc;
 
 void ProceMaestros::insertar()
 {
+    //Implemetancion de bitacora
      string codigoPrograma="2624";
 Bitacora Auditoria;
 string user, contrasena;
