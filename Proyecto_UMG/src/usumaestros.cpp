@@ -2,6 +2,9 @@
 #include <fstream> //Libreria necesaria para la creacion, lectura y manejo de archivos
 #include <iomanip> //Libreria necesaria para el comando setw()
 
+#include "Login.h"
+#include "Bitacora.h"
+
 using namespace std;
 
 class usumaestros
@@ -19,6 +22,11 @@ class usumaestros
 
 void usumaestros::menu()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2500", "UMM");
+
+
     int opc;
     do
     {
@@ -59,6 +67,11 @@ void usumaestros::menu()
 
 void usumaestros::pideDatos()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2501", "UMPD");
+
+
     system("cls");
     fstream file;
 
@@ -81,6 +94,11 @@ void usumaestros::pideDatos()
 
 void usumaestros::muestraDatos()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2502", "UMMD");
+
+
     system("cls");
     fstream file;
     int total=0;
@@ -120,6 +138,11 @@ void usumaestros::muestraDatos()
 
 void usumaestros::editaDatos()
  {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2503", "UMED");
+
+
     system("cls");
     fstream file, file1;
     string foundNom;
@@ -167,6 +190,10 @@ void usumaestros::editaDatos()
 
 void usumaestros::borraDatos()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2504", "UMBD");
+
    	system("cls");
 	fstream file, file1;
 	string partcipante;

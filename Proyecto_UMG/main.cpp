@@ -4,13 +4,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <conio.h>
-#include "usuarios.h"
 #include "Bitacora.h"
 #include "alumnos.h"
 #include "maestros.h"
-#include "login.h"
 #include "Procesos.h"
-#define MAX 80
+#include "usuarios.h"
+#include "Login.h"
+
+
 
 using namespace std;
 
@@ -21,40 +22,20 @@ void procesos();
 void ayuda();
 void seguridad();
 string codigoPrograma="1";
-Bitacora Auditoria;
-string user, contrasena;
+
 
 int main() {
     Login login;
-    int intentos = 0;
-    bool loginExitoso = false;
-
-    do {
-    int resultadoLogin = login.menuIniciarSesion();
-    if (resultadoLogin == 1) {
-    loginExitoso = true;
-    break;
+    if (login.validacion()) {
+        menuGeneral();
     } else {
-    intentos++;
-    cout << "Intento fallido. Intento " << intentos << " de 3." << endl;
-    if (intentos >= 3) {
-    cout << "Demasiados intentos fallidos. Saliendo del programa."<< endl;
-    return 1;
+        cout << "Intentelo nuevamente..." << endl;
     }
-    }
-    } while (!loginExitoso);
-
-    if (loginExitoso) {
-    cout << "Inicio de sesión exitoso. Bienvenido al sistema."<< endl;
-    menuGeneral();
-    }
-
     return 0;
 }
 void menuGeneral()
 {
     int choice;
-
 
     do
     {
@@ -91,17 +72,21 @@ void menuGeneral()
             break;
         case 4:
             {
-    Bitacora Auditoria;
-    Auditoria.visualizarBitacora();
+                Bitacora sex;
+                sex.mostrarBitacora();
+                break;
             }
-            seguridad();
-            break;
         case 5:
             ayuda();
             break;
         case 6:
-                    Auditoria.ingresoBitacora(user,codigoPrograma,"LGO"); //llamada para registrar la bitacora de seguridad
+            {
+            string usuarioActual = Login::getUsuarioActual();
+            Bitacora bitacora;
+            bitacora.ingresoBitacora(usuarioActual, "2600", "LGO");
             exit(0);
+            }
+
         default:
             cout << "\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
             cin.ignore();
@@ -154,8 +139,8 @@ void catalogos()
             break;
         case 3:
         {
-            Usuario UsuarioS;
-            UsuarioS.menuInicial();
+            usuarios usuario;
+            usuario.menu();
             break;
         }
         case 4:
@@ -211,6 +196,6 @@ void ayuda()
 void seguridad()
 {
     // Implementación de seguridad
-    Bitacora Auditoria;
-    Auditoria.visualizarBitacora();
+                Bitacora sex;
+                sex.mostrarBitacora();
 }

@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream> //Libreria necesaria para la creacion, lectura y manejo de archivos
 #include <iomanip> //Libreria necesaria para el comando setw()
-
+#include "Bitacora.h"
+#include "Login.h"
 using namespace std;
 
 class usualumnos
@@ -19,6 +20,11 @@ class usualumnos
 
 void usualumnos::menu()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2400", "UAM");
+
+
     int opc;
     do
     {
@@ -59,8 +65,14 @@ void usualumnos::menu()
 
 void usualumnos::pideDatos()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2401", "USPD");
+
     system("cls");
     fstream file;
+
+
 
     cout<<"+---------------------------------------------------------+"<< endl;
     cout<<"|        Agregar detalles del Usuario de Alumnos          |"<< endl;
@@ -81,6 +93,12 @@ void usualumnos::pideDatos()
 
 void usualumnos::muestraDatos()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2402", "USMD");
+
+
+
     system("cls");
     fstream file;
     int total=0;
@@ -120,6 +138,11 @@ void usualumnos::muestraDatos()
 
 void usualumnos::editaDatos()
  {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2403", "USED");
+
+
     system("cls");
     fstream file, file1;
     string foundNom;
@@ -167,6 +190,10 @@ void usualumnos::editaDatos()
 
 void usualumnos::borraDatos()
 {
+    string usuarioActual = Login::getUsuarioActual();
+    Bitacora bitacora;
+    bitacora.ingresoBitacora(usuarioActual, "2404", "USBD");
+
    	system("cls");
 	fstream file, file1;
 	string partcipante;
