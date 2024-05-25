@@ -72,8 +72,8 @@ void menuGeneral()
             break;
         case 4:
             {
-                Bitacora sex;
-                sex.mostrarBitacora();
+                Bitacora bitacora;
+                bitacora.mostrarBitacora();
                 break;
             }
         case 5:
@@ -191,6 +191,6 @@ void ayuda()
 void seguridad()
 {
     // Implementación de seguridad
-                Bitacora sex;
-                sex.mostrarBitacora();
+                Bitacora bitacora;
+                bitacora.mostrarBitacora();
 }
