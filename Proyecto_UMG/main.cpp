@@ -72,8 +72,8 @@ void menuGeneral()
             break;
         case 4:
             {
-                Bitacora sex;
-                sex.mostrarBitacora();
+                Bitacora bitacora;
+                bitacora.mostrarBitacora();
                 break;
             }
         case 5:
@@ -144,28 +144,28 @@ void catalogos()
             break;
         }
         case 4:
-            // Implementaci髇 para Carreras
+            // Implementaci贸n para Carreras
             break;
         case 5:
-            // Implementaci髇 para Facultades
+            // Implementaci贸n para Facultades
             break;
         case 6:
-            // Implementaci髇 para Cursos
+            // Implementaci贸n para Cursos
             break;
         case 7:
-            // Implementaci髇 para Jornadas
+            // Implementaci贸n para Jornadas
             break;
         case 8:
-            // Implementaci髇 para Aulas
+            // Implementaci贸n para Aulas
             break;
         case 9:
-            // Implementaci髇 para Secciones
+            // Implementaci贸n para Secciones
             break;
         case 10:
-            // Implementaci髇 para Sedes
+            // Implementaci贸n para Sedes
             break;
         case 11:
-            // Implementaci髇 para Horarios
+            // Implementaci贸n para Horarios
             break;
         case 12:
             menuGeneral();
@@ -185,17 +185,17 @@ void procesos()
 
 void reportes()
 {
-    // Implementaci髇 de reportes
+    // Implementaci贸n de reportes
 }
 
 void ayuda()
 {
-    // Implementaci髇 de ayuda
+    // Implementaci贸n de ayuda
 }
 
 void seguridad()
 {
-    // Implementaci髇 de seguridad
-                Bitacora sex;
-                sex.mostrarBitacora();
+    // Implementaci贸n de seguridad
+                Bitacora bitacora;
+                bitacora.mostrarBitacora();
 }
